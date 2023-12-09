@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.DataAccess.Interfaces
 {
-	public interface IRepository<T> where T : BaseEntity
-	{
-		Task<T> GetByIdAsync(int? id);
+    public interface IRepository<T> where T : BaseEntity
+    {
+	 Task<T> GetByIdAsync(int? id);
 
-		Task<List<T>> GetAllAsync();
+	 Task<List<T>> GetAllAsync();
 
-		Task CreateAsync(T entity);
+	 Task CreateAsync(T entity);
 
-		Task UpdateAsync(T entity);
+	 Task UpdateAsync(T entity);
 
-		Task DeleteAsync(int? id);
-	}
+	 Task DeleteAsync(int? id);
+    }
 }
