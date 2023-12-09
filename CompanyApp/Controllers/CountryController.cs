@@ -7,107 +7,111 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyApp.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class CountryController : ControllerBase
-	{
-		private readonly ICountryService _countryService;
+     [Route("api/[controller]")]
+     [ApiController]
+     public class CountryController : ControllerBase
+     {
+	  private readonly ICountryService _countryService;
 
-        public CountryController(ICountryService countryService)
-        {
-			_countryService = countryService;
-        }
+      public CountryController(ICountryService countryService)
+      {
+	   _countryService = countryService;
+      }
 
-		[HttpGet("{id:int}")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
-		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-		public async Task<ActionResult<CountryDto>> GetCountryByIdAsync(int? id)
-		{
-			try
+      [HttpGet("{id:int}")]
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+      
+      public async Task<ActionResult<CountryDto>> GetCountryByIdAsync(int? id)
+      {
+	   try
+	   {
+		  if (id == 0)
+		  {
+			 return BadRequest("Id can not be zero.");
+		  }
+
+		  if (id <= 0)
+		  {
+		       return BadRequest("Id can not be a negative number");
+		  }
+
+			CountryDto countryDto = await _countryService.GetCountryByIdAsync(id);
+
+			return Ok(countryDto);
+	     }
+      
+	      catch (Exception)
+	      {
+			return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
+	      }
+	  }
+
+	  [HttpGet]
+	  [ProducesResponseType(StatusCodes.Status200OK)]
+	  [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+	  public async Task<ActionResult<List<CountryDto>>> GetAllCountriesAsync()
+	  {
+		 try
+		 {
+			return Ok(await _countryService.GetAllCountriesAsync());
+		 }
+		 catch (Exception)
+		 {
+			return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
+		 }
+	  }
+
+	    [HttpPost]
+            [ProducesResponseType(StatusCodes.Status400BadRequest)]
+	    [ProducesResponseType(StatusCodes.Status201Created)]
+	    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+	     public async Task<ActionResult> CreateContriesAsync([FromBody] CreateCountryDto country)
+	     {
+		   try
+		   {
+			if(country == null || country.CountryName == null)
 			{
-				if (id == 0)
-				{
-					return BadRequest("Id can not be zero.");
-				}
-
-				if (id <= 0)
-				{
-					return BadRequest("Id can not be a negative number");
-				}
-
-				CountryDto countryDto = await _countryService.GetCountryByIdAsync(id);
-
-				return Ok(countryDto);
+				return BadRequest("Invalid input");
 			}
-			catch (Exception)
-			{
-				return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
-			}
-		}
 
-		[HttpGet]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+			 await _countryService.CreateCountryAsync(country);
+			 return StatusCode(StatusCodes.Status201Created, "Country has been added");
+		    }
+      
+		     catch (Exception)
+		     {
+			return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
+		     }
+	      }
 
-		public async Task<ActionResult<List<CountryDto>>> GetAllCountriesAsync()
-		{
-			try
-			{
-				return Ok(await _countryService.GetAllCountriesAsync());
-			}
-			catch (Exception)
-			{
-				return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
-			}
-		}
-
-		[HttpPost]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
-		[ProducesResponseType(StatusCodes.Status201Created)]
-		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-
-		public async Task<ActionResult> CreateContriesAsync([FromBody] CreateCountryDto country)
-		{
-			try
-			{
-				if(country == null || country.CountryName == null)
-				{
-					return BadRequest("Invalid input");
-				}
-
-				await _countryService.CreateCountryAsync(country);
-				return StatusCode(StatusCodes.Status201Created, "Country has been added");
-			}
-			catch (Exception)
-			{
-				return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
-			}
-		}
-
-		[HttpDelete("{id:int}")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status400BadRequest)]
-		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+	       [HttpDelete("{id:int}")]
+	       [ProducesResponseType(StatusCodes.Status200OK)]
+	       [ProducesResponseType(StatusCodes.Status400BadRequest)]
+	       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
 		public async Task<ActionResult> DeleteCountryAsync(int id)
 		{
-			try
-			{
-				if (id == 0)
-				{
-					return BadRequest("Id can not be zero");
-				}
+		     try
+		     {
+			  if (id == 0)
+			  {
+				return BadRequest("Id can not be zero");
+			  }
 
-				if (id <= 0)
-				{
-					return BadRequest("Id can not be a negative number");
-				}
+			 if (id <= 0)
+			 {
+				return BadRequest("Id can not be a negative number");
+			 }
 
-				await _countryService.DeleteCountryAsync(id);
+			  await _countryService.DeleteCountryAsync(id);
 
-				return Ok();
+			  return Ok();
 			}
+   
 			catch (Exception)
 			{
 				return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
@@ -143,5 +147,5 @@ namespace CompanyApp.Controllers
 			}
 
 		}
-	}
-}
+	 }
+   }
