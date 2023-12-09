@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.DTOs.ContactDTOs
 {
-	public class ContactDto
-	{
-		public string ContactName { get; set; }
+     public class ContactDto
+     {
+	 public string ContactName { get; set; }
 
-		public JobTitle JobTitle { get; set; }
+	 public JobTitle JobTitle { get; set; }
 
-		public CompanyDto? Company { get; set; }
+	 public CompanyDto? Company { get; set; }
 
-		public CountryDto? Country { get; set; }
-	}
+	 public CountryDto? Country { get; set; }
+     }
 }
