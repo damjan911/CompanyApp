@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.DTOs.CountryDTOs
 {
-	public class CountryDto
-	{
-		public string? CountryName { get; set; }
-	}
+    public class CountryDto
+    {
+	public string? CountryName { get; set; }
+	
+    }
 }
