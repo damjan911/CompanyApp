@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp", "CompanyApp\CompanyApp.csproj", "{AD8A7561-1199-45A7-926F-90E5E93C5A2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyApp", "CompanyApp\CompanyApp.csproj", "{AD8A7561-1199-45A7-926F-90E5E93C5A2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.DataAccess", "CompanyApp.DataAccess\CompanyApp.DataAccess.csproj", "{4AAD441B-D376-46DD-9D45-192D30F9C31C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyApp.DataAccess", "CompanyApp.DataAccess\CompanyApp.DataAccess.csproj", "{4AAD441B-D376-46DD-9D45-192D30F9C31C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.Domain", "CompanyApp.Domain\CompanyApp.Domain.csproj", "{A956120E-C41C-4E45-A016-5055DC341D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyApp.Domain", "CompanyApp.Domain\CompanyApp.Domain.csproj", "{A956120E-C41C-4E45-A016-5055DC341D5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.DTOs", "CompanyApp.DTOs\CompanyApp.DTOs.csproj", "{25C20492-92F4-45D0-BE29-48F6DB970196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyApp.DTOs", "CompanyApp.DTOs\CompanyApp.DTOs.csproj", "{25C20492-92F4-45D0-BE29-48F6DB970196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.Helpers", "CompanyApp.Helpers\CompanyApp.Helpers.csproj", "{9DEC5ABD-FE32-49D2-9799-8DFE31983151}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyApp.Helpers", "CompanyApp.Helpers\CompanyApp.Helpers.csproj", "{9DEC5ABD-FE32-49D2-9799-8DFE31983151}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.Mappers", "CompanyApp.Mappers\CompanyApp.Mappers.csproj", "{0702DE15-0CFD-49BB-99E4-8124F72C3D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyApp.Mappers", "CompanyApp.Mappers\CompanyApp.Mappers.csproj", "{0702DE15-0CFD-49BB-99E4-8124F72C3D8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.Services", "CompanyApp.Services\CompanyApp.Services.csproj", "{94D0159A-E1E1-42E4-84C7-ECCC64050593}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyApp.Services", "CompanyApp.Services\CompanyApp.Services.csproj", "{94D0159A-E1E1-42E4-84C7-ECCC64050593}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

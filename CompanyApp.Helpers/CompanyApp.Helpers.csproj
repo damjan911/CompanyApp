@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CompanyApp.DataAccess\CompanyApp.DataAccess.csproj" />
+    <ProjectReference Include="..\CompanyApp.Services\CompanyApp.Services.csproj" />
+  </ItemGroup>
+
 </Project>

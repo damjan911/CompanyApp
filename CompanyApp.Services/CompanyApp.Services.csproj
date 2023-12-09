@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CompanyApp.DataAccess\CompanyApp.DataAccess.csproj" />
+    <ProjectReference Include="..\CompanyApp.DTOs\CompanyApp.DTOs.csproj" />
+    <ProjectReference Include="..\CompanyApp.Mappers\CompanyApp.Mappers.csproj" />
+  </ItemGroup>
+
 </Project>
