@@ -8,17 +8,16 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Domain.Entities
 {
-	public class Company : BaseEntity
-	{
-		[Required]
-		[MaxLength(255)]
-		public string CompanyName { get; set; }
+     public class Company : BaseEntity
+     {
+	  [Required]
+	  [MaxLength(255)]
+	  public string CompanyName { get; set; }
 
-		[Required]
-		public Industry Industry { get; set; }
+	  [Required]
+	  public Industry Industry { get; set; }
 
+          public List<Contact> Contacts { get; set; }
 
-		public List<Contact> Contacts { get; set; }
-
-	}
+      }
 }
