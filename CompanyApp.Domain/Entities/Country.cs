@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Domain.Entities
 {
-	public class Country : BaseEntity
-	{
-		
-		[MaxLength(255)]
-		public string ?CountryName { get; set; }
+    public class Country : BaseEntity
+    {
+	 [MaxLength(255)]
+	 public string ?CountryName { get; set; }
 
-		public List<Contact> ?Contact { get; set; }
-	}
+	 public List<Contact> ?Contact { get; set; }
+    }
 }
