@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Mappers
 {
-	public static class CountryMapper
-	{
-		public static CountryDto MapToCountryDto (this Country country)
+    public static class CountryMapper
+    {
+	  public static CountryDto MapToCountryDto (this Country country)
+	  {
+		return new CountryDto()
 		{
-			return new CountryDto()
-			{
-				CountryName = country.CountryName,
-			};
-		}
+			CountryName = country.CountryName,
+		};
+	  }
 
-		public static Country MapToCountry (this CreateCountryDto createCountryDto)
-		{
-			return new Country()
-			{
-				CountryName = createCountryDto.CountryName
-			};
-		}
-	}
+	    public static Country MapToCountry (this CreateCountryDto createCountryDto)
+	    {
+		  return new Country()
+		  {
+			  CountryName = createCountryDto.CountryName
+		  };
+	    }
+     }
 }
