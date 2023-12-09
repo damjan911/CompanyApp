@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Domain.Enums
 {
-	public enum Industry
-	{
-		Technology,
-		Finance,
-		Manufacturing,
-		Transportation
-	}
+    public enum Industry
+    {
+	Technology,
+	Finance,
+	Manufacturing,
+	Transportation
+    }
 }
