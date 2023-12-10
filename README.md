@@ -15,14 +15,16 @@ ___
 
 ## CompanyApp.Domain
 
-We will start with Domain Models first. In the First Class Library we have two Folders. The first one is for Enums which are part of the Domain Models and the second one are basically the Models which we are working on. 
-In our Application we have three Domain Models and one Abstract Class called BaseEntity. <ins> That's are :  **Company**, **Contact** *and* **Country** </ins> and they are in a Relationship each other.
+ We will start with Domain Models first. In the First Class Library we have two Folders. The first one is for Enums which are part of the Domain Models and the second one are basically the Models which we are 
+ working on. 
+ In our Application we have three Domain Models and one Abstract Class called BaseEntity. <ins> That's are :  **Company**, **Contact** *and* **Country** </ins> and they are in a Relationship each other.
 
-### Here are the relationships between the Book, Author, and Customer entities:
+### Here are the relationships between the Company, Contact, and Country entities:
 
-1. Company and Contact Relationship:
+ 1. Company and Contact Relationship:
 
-The relationship between a "Company" and a "Contact" is typically a "One-to-Many" relationship. This means that one company can have multiple contacts associated with it, but each contact is associated with only one company.
+ The relationship between a "Company" and a "Contact" is typically a "One-to-Many" relationship. This means that one company can have multiple contacts associated with it, but each contact is associated with 
+ only one company.
 
 ```
   public class Company : BaseEntity
@@ -31,7 +33,7 @@ The relationship between a "Company" and a "Contact" is typically a "One-to-Many
       [MaxLength(255)]
       public string CompanyName { get; set; }
 
-	    [Required]
+      [Required]
       public Industry Industry { get; set; }
 
       public List<Contact> Contacts { get; set; }
@@ -66,32 +68,32 @@ The relationship between a "Company" and a "Contact" is typically a "One-to-Many
 
 ```
 
-2. Contact and Country Relationship:
+ 2. Contact and Country Relationship:
 
 The relationship between a "Contact" and a "Country" is "Many-to-One" relationship. multiple contacts can be associated with a single country. This implies that many contacts share the same country.
 
 ```
-   public class Contact : BaseEntity
-   {
-	   [Required]
-	   [MaxLength(255)]
-	   public string ContactName { get; set; }
+ public class Contact : BaseEntity
+ {
+      [Required]
+      [MaxLength(255)]
+      public string ContactName { get; set; }
 
-	   [Required]
-	   [MaxLength(255)]
-	   public JobTitle JobTitle { get; set; }
+      [Required]
+      [MaxLength(255)]
+      public JobTitle JobTitle { get; set; }
 
-	   [Required]
-	   [ForeignKey("Company")]
-	   public int CompanyId { get; set; }
+      [Required]
+      [ForeignKey("Company")]
+      public int CompanyId { get; set; }
 
-	   public Company? Company { get; set; }
+      public Company? Company { get; set; }
 
-	   public Country ?Country { get; set; }
+      public Country ?Country { get; set; }
 
-	   [Required]
-	   [ForeignKey("Country")]
-	   public int CountryId { get; set; }
+      [Required]
+      [ForeignKey("Country")]
+      public int CountryId { get; set; }
   }
 
 ```
@@ -99,17 +101,17 @@ The relationship between a "Contact" and a "Country" is "Many-to-One" relationsh
 ```
   public class Country : BaseEntity
   {
-     [MaxLength(255)]
-	   public string ?CountryName { get; set; }
+      [MaxLength(255)]
+      public string ?CountryName { get; set; }
 
-	   public List<Contact> ?Contact { get; set; }
+      public List<Contact> ?Contact { get; set; }
   }
 
 ```
 
 ## CompanyApp.DataAccess
 
-DataAccess plays a major rule and it is a crucial component for interacting with databases  which contain all CRUD Operations that we need to manipulate with our Database.
+DataAccess plays a major rule and it is a crucial component for interacting with databases which contain all CRUD Operations that we need to manipulate with our Database.
 [CompanyApp.DataAccess] (https://github.com/damjan911/CompanyApp/tree/master/CompanyApp.DataAccess)
 
 ## CompanyApp.DTOs
