@@ -45,25 +45,25 @@ ___
 ```
    public class Contact : BaseEntity
    {
-	   [Required]
-	   [MaxLength(255)]
-	   public string ContactName { get; set; }
+       [Required]
+       [MaxLength(255)]
+       public string ContactName { get; set; }
 
-	   [Required]
-	   [MaxLength(255)]
-	   public JobTitle JobTitle { get; set; }
+       [Required]
+       [MaxLength(255)]
+       public JobTitle JobTitle { get; set; }
 
-	   [Required]
-	   [ForeignKey("Company")]
-	   public int CompanyId { get; set; }
+        [Required]
+        [ForeignKey("Company")]
+        public int CompanyId { get; set; }
 
-	   public Company? Company { get; set; }
+        public Company? Company { get; set; }
 
-	   public Country ?Country { get; set; }
+        public Country ?Country { get; set; }
 
-	   [Required]
-	   [ForeignKey("Country")]
-	   public int CountryId { get; set; }
+        [Required]
+        [ForeignKey("Country")]
+        public int CountryId { get; set; }
   }
 
 ```
