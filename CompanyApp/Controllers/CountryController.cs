@@ -37,16 +37,16 @@ namespace CompanyApp.Controllers
 		       return BadRequest("Id can not be a negative number");
 		  }
 
-			CountryDto countryDto = await _countryService.GetCountryByIdAsync(id);
+		  CountryDto countryDto = await _countryService.GetCountryByIdAsync(id);
 
-			return Ok(countryDto);
-	     }
+		  return Ok(countryDto);
+           }
       
-	      catch (Exception)
-	      {
+	     catch (Exception)
+	     {
 			return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
-	      }
-	  }
+	     }
+      }
 
 	  [HttpGet]
 	  [ProducesResponseType(StatusCodes.Status200OK)]
@@ -62,7 +62,7 @@ namespace CompanyApp.Controllers
 		 {
 			return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
 		 }
-	  }
+	   }
 
 	    [HttpPost]
             [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -86,7 +86,7 @@ namespace CompanyApp.Controllers
 		     {
 			return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
 		     }
-	      }
+	       }
 
 	       [HttpDelete("{id:int}")]
 	       [ProducesResponseType(StatusCodes.Status200OK)]
@@ -95,31 +95,28 @@ namespace CompanyApp.Controllers
 
 		public async Task<ActionResult> DeleteCountryAsync(int id)
 		{
-			try
-			{
-				if (id == 0)
-				{
-					return BadRequest("Id can not be zero");
+		    try
+		    {
+			  if (id == 0)
+			  {
+				 return BadRequest("Id can not be zero");
+                          }
+                          
+			  if (id <= 0)
+			  {
+				 return BadRequest("Id can not be a negative number");
+		          }
 
+			    await _countryService.DeleteCountryAsync(id);
 
-				}
-
-
-				if (id <= 0)
-				{
-					return BadRequest("Id can not be a negative number");
-				}
-
-					await _countryService.DeleteCountryAsync(id);
-
-				return StatusCode(StatusCodes.Status204NoContent,"The Country with this Id doesn't exist");
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.ToString());
-                return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
-			}
-		}
+			    return StatusCode(StatusCodes.Status204NoContent,"The Country with this Id doesn't exist");
+		    }
+		    catch (Exception ex)
+		     {
+			    Console.WriteLine(ex.ToString());
+                            return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
+		     }
+		 }
 
 		[HttpPatch("{id:int}")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
@@ -128,26 +125,26 @@ namespace CompanyApp.Controllers
 
 		public async Task<ActionResult> UpdateCountryAsync([FromBody] CreateCountryDto createCountryDto, int id)
 		{
-			try
-			{
-				if (id == 0)
-				{
-					return BadRequest("Id can not be zero");
-				}
+		     try
+		     {
+			   if (id == 0)
+			   {
+				 return BadRequest("Id can not be zero");
+			   }
 
-				if (id <= 0)
-				{
-					return BadRequest("Id can not be a negative number");
-				}
+			   if (id <= 0)
+			   {
+				 return BadRequest("Id can not be a negative number");
+			   }
 
-				await _countryService.UpdateCountryAsync(createCountryDto, id);
+			      await _countryService.UpdateCountryAsync(createCountryDto, id);
 
-				return Ok();
-			}
-			catch (Exception)
-			{
-				return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
-			}
+			      return Ok();
+		      }
+		      catch (Exception)
+		      {
+			     return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
+		      }
 
 		}
 	 }
