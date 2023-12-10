@@ -30,6 +30,9 @@ namespace CompanyApp.DataAccess.Implementations
 			Country countryDb = await GetByIdAsync(id);
 
 			_dbContext.Remove(countryDb);	
+
+			await _dbContext.SaveChangesAsync();
+
 		}
 
 		public async Task<List<Country>> GetAllAsync()

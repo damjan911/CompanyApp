@@ -30,6 +30,8 @@ namespace CompanyApp.DataAccess.Implementations
 			Company companyDb = await GetByIdAsync(id);
 
 			_context.Remove(companyDb);
+
+			await _context.SaveChangesAsync();
 		}
 
 		public async Task<List<Company>> GetAllAsync()

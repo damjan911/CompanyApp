@@ -97,20 +97,24 @@ namespace CompanyApp.Controllers
 				if (id == 0)
 				{
 					return BadRequest("Id can not be zero");
+
+
 				}
+
 
 				if (id <= 0)
 				{
 					return BadRequest("Id can not be a negative number");
 				}
 
-				await _countryService.DeleteCountryAsync(id);
+					await _countryService.DeleteCountryAsync(id);
 
-				return Ok();
+				return StatusCode(StatusCodes.Status204NoContent,"The Country with this Id doesn't exist");
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
+				Console.WriteLine(ex.ToString());
+                return StatusCode(StatusCodes.Status500InternalServerError, "Please contact the support team.");
 			}
 		}
 

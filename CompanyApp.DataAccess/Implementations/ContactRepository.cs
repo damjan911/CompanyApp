@@ -30,6 +30,8 @@ namespace CompanyApp.DataAccess.Implementations
 			Contact contactDb = await GetByIdAsync(id);
 
 			_context.Remove(contactDb);
+
+			await _context.SaveChangesAsync();
 		}
 
 		public List<Contact> FilterContacts (int countryId, int companyId)
