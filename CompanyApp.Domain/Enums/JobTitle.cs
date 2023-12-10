@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Domain.Enums
 {
-	public enum JobTitle 
-	{
-		Software_Engineer,
-		Financial_Analyst,
-		Production_Supervisor,
-		Logistics_Coordinator
-	}
+    public enum JobTitle 
+    {
+	Software_Engineer,
+	Financial_Analyst,
+	Production_Supervisor,
+	Logistics_Coordinator
+    }
 }

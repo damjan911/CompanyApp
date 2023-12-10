@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.DTOs.CompanyDTOs
 {
-	public class CompanyDto
-	{
-		public string CompanyName { get; set; }
+    public class CompanyDto
+    {
+	 public string CompanyName { get; set; }
 
-		public Industry Industry { get; set; }
-	}
+	 public Industry Industry { get; set; }
+    }
 }

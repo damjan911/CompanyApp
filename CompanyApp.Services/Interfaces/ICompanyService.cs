@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Services.Interfaces
 {
-	public interface ICompanyService
-	{
-		Task<CompanyDto> GetCompanyByIdAsync(int? id);
+     public interface ICompanyService
+     {
+	  Task<CompanyDto> GetCompanyByIdAsync(int? id);
 
-		Task<IEnumerable<CompanyDto>> GetAllCompaniesAsync();
+	  Task<IEnumerable<CompanyDto>> GetAllCompaniesAsync();
 
-		Task CreateCompanyAsync(CreateCompanyDto createCompanyDto);
+	  Task CreateCompanyAsync(CreateCompanyDto createCompanyDto);
 
-		Task DeleteCompanyAsync(int? id);
+	  Task DeleteCompanyAsync(int? id);
 
-		Task UpdateCompanyAsync(CreateCompanyDto createCompanyDto, int? id);
-	}
+	  Task UpdateCompanyAsync(CreateCompanyDto createCompanyDto, int? id);
+     }
 }

@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Services.Interfaces
 {
-	public interface ICountryService
-	{
-		Task<CountryDto> GetCountryByIdAsync(int? id);
+     public interface ICountryService
+     {
+	  Task<CountryDto> GetCountryByIdAsync(int? id);
 
-		Task<IEnumerable<CountryDto>> GetAllCountriesAsync();
+	  Task<IEnumerable<CountryDto>> GetAllCountriesAsync();
 
-		Task CreateCountryAsync(CreateCountryDto createCountryDto);
+	  Task CreateCountryAsync(CreateCountryDto createCountryDto);
 
-		Task DeleteCountryAsync(int? id);
+	  Task DeleteCountryAsync(int? id);
 
-		Task UpdateCountryAsync(CreateCountryDto createCountryDto, int? id);
-	}
+	  Task UpdateCountryAsync(CreateCountryDto createCountryDto, int? id);
+     }
 }

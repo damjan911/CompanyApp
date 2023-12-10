@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Domain.Entities
 {
-	public abstract class BaseEntity
-	{
-		[Key]
-		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int Id { get; set; }
+    public abstract class BaseEntity
+    {
+	 [Key]
+	 [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	 public int Id { get; set; }
 	
-	}
+    }
 }

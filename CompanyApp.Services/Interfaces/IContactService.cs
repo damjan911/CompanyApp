@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Services.Interfaces
 {
-	public interface IContactService
-	{
-		Task<ContactDto> GetContactByIdAsync(int? id);
+     public interface IContactService
+     {
+	   Task<ContactDto> GetContactByIdAsync(int? id);
 
-		Task<IEnumerable<ContactDto>> GetAllContactsAsync();
+	   Task<IEnumerable<ContactDto>> GetAllContactsAsync();
 
-		Task CreateContactAsync(CreateContactDto createContactDto);
+	   Task CreateContactAsync(CreateContactDto createContactDto);
 
-		Task DeleteContactAsync(int? id);
+	   Task DeleteContactAsync(int? id);
 
-		Task UpdateContactAsync(CreateContactDto createContactDto, int? id);
-	}
+	   Task UpdateContactAsync(CreateContactDto createContactDto, int? id);
+     }
 }

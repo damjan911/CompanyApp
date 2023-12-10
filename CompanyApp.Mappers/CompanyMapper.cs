@@ -8,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.Mappers
 {
-	public static class CompanyMapper
-	{
-		public static CompanyDto MapToCompanyDto (this Company company)
+     public static class CompanyMapper
+     {
+	  public static CompanyDto MapToCompanyDto (this Company company)
+	  {
+		return new CompanyDto()
 		{
-			return new CompanyDto()
-			{
-				CompanyName = company.CompanyName,
-				Industry = company.Industry
-			};
-		}
+			CompanyName = company.CompanyName,
+			Industry = company.Industry
+		};
+	  }
 
-		public static Company MapToCompany (this CreateCompanyDto createCompanyDto)
+	  public static Company MapToCompany (this CreateCompanyDto createCompanyDto)
+	  {
+		return new Company()
 		{
-			return new Company()
-			{
-				CompanyName = createCompanyDto.CompanyName,
-				Industry = createCompanyDto.Industry,
-			};
-		}
-	}
+			CompanyName = createCompanyDto.CompanyName,
+			Industry = createCompanyDto.Industry,
+		};
+	  }
+     }
 }

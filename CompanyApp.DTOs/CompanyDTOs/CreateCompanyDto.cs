@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace CompanyApp.DTOs.CompanyDTOs
 {
-	public class CreateCompanyDto
-	{
-		public string CompanyName { get; set; }
+    public class CreateCompanyDto
+    {
+	public string CompanyName { get; set; }
 
-		public Industry Industry { get; set; }
+	public Industry Industry { get; set; }
 
-		
-	}
+    }
 }
