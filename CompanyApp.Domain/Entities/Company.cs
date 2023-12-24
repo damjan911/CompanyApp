@@ -14,10 +14,9 @@ namespace CompanyApp.Domain.Entities
 	  [MaxLength(255)]
 	  public string CompanyName { get; set; }
 
-	  [Required]
-	  public Industry Industry { get; set; }
+      public List<Country> Countries { get; set; }
 
-          public List<Contact> Contacts { get; set; }
+      public List<Contact> Contacts { get; set; }
 
       }
 }
