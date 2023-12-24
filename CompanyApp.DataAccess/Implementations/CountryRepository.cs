@@ -15,7 +15,7 @@ namespace CompanyApp.DataAccess.Implementations
 
          public CountryRepository(CompanyAppDbContext dbContext)
          {
-	        _dbContext = dbContext;
+	      _dbContext = dbContext;
          }
 
          public async Task CreateAsync (Country entity)
@@ -26,15 +26,15 @@ namespace CompanyApp.DataAccess.Implementations
 
          public async Task DeleteAsync(int? id)
          {
-	        Country countryDb = await GetByIdAsync(id);
-	       _dbContext.Remove(countryDb);
-	        await _dbContext.SaveChangesAsync();
+	      Country countryDb = await GetByIdAsync(id);
+	      _dbContext.Remove(countryDb);
+	      await _dbContext.SaveChangesAsync();
 
          }
 
          public async Task<List<Country>> GetAllAsync()
          {
-	        return await _dbContext.Country.ToListAsync();
+	      return await _dbContext.Country.ToListAsync();
          }
 
          public async Task<Country> GetByIdAsync(int? id)
@@ -44,7 +44,7 @@ namespace CompanyApp.DataAccess.Implementations
 
          public async Task UpdateAsync(Country entity)
          {
-	         _dbContext.Country.Update(entity);
+	        _dbContext.Country.Update(entity);
 	         await _dbContext.SaveChangesAsync();
          }
       
