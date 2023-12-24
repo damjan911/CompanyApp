@@ -30,5 +30,5 @@ namespace CompanyApp.Domain.Entities
 	 [Required]
 	 [ForeignKey("Country")]
 	 public int CountryId { get; set; }
-	}
+   }
 }
